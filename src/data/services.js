@@ -3,7 +3,7 @@ export const servicesData = [
 		id: 0,
 		number: "01",
 		title: "Tuinaanleg",
-		description: "Van concept tot realisatie — wij ontwerpen en leggen tuinen aan die perfect aansluiten bij uw woning en levensstijl.",
+		description: "Van concept tot realisatie. Wij ontwerpen en leggen tuinen aan die perfect aansluiten bij uw woning en levensstijl.",
 		image: "https://images.unsplash.com/photo-1558904541-efa843a96f01?q=80&w=1000",
 	},
 	{
@@ -17,7 +17,7 @@ export const servicesData = [
 		id: 2,
 		number: "03",
 		title: "Groenvoorziening",
-		description: "Beplanting, gazon, hagen en borders — wij adviseren en plaatsen groen dat past bij uw tuin en de seizoenen.",
+		description: "Beplanting, gazon, hagen en borders. Wij adviseren en plaatsen groen dat past bij uw tuin en de seizoenen.",
 		image: "https://images.unsplash.com/photo-1585320806297-9794b3e4eeae?q=80&w=1000",
 	},
 	{

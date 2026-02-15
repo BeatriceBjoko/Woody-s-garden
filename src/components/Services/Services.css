@@ -89,7 +89,7 @@
 }
 
 .services__item:first-child {
-	border-top: 1px solid #d0d0d0;
+	border-top: none;
 }
 
 .services__item-header {

@@ -19,10 +19,13 @@ const Hero = () => {
 					PASSIE
 				</p>
 
-				<button className="hero__cta">ONTDEK ONS WERK</button>
+				<a href="#projects" className="hero__cta">
+					ONTDEK ONS WERK
+				</a>
 			</div>
 
 			<div className="hero__scroll-indicator">
+				<span className="hero__scroll-text">Scroll</span>
 				<div className="hero__scroll-line"></div>
 			</div>
 		</section>
