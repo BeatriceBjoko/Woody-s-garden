@@ -1,0 +1,259 @@
+.contact {
+	position: relative;
+	width: 100%;
+	background-color: #f0eeea;
+	padding: 120px 0;
+}
+
+.contact__container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 80px;
+	display: grid;
+	grid-template-columns: 45% 55%;
+	gap: 100px;
+	align-items: start;
+}
+
+.contact__left {
+	position: sticky;
+	top: 120px;
+}
+
+.contact__eyebrow {
+	font-size: 11px;
+	letter-spacing: 3px;
+	color: #999;
+	margin-bottom: 24px;
+	font-weight: 400;
+	text-transform: uppercase;
+}
+
+.contact__title {
+	font-family: var(--font-display);
+	font-size: 52px;
+	font-weight: 300;
+	color: #2d2d2d;
+	line-height: 1.2;
+	margin-bottom: 32px;
+}
+
+.contact__title-italic {
+	font-style: italic;
+}
+
+.contact__description {
+	font-size: 16px;
+	line-height: 1.8;
+	color: #666;
+	margin-bottom: 60px;
+	max-width: 500px;
+}
+
+.contact__info {
+	display: flex;
+	flex-direction: column;
+	gap: 32px;
+}
+
+.contact__info-item {
+	display: flex;
+	flex-direction: column;
+	gap: 8px;
+}
+
+.contact__info-label {
+	font-size: 11px;
+	letter-spacing: 2px;
+	color: #999;
+	text-transform: uppercase;
+}
+
+.contact__info-value {
+	font-size: 16px;
+	color: #2d2d2d;
+	text-decoration: none;
+	transition: color 300ms ease;
+}
+
+a.contact__info-value:hover {
+	color: #c4a574;
+}
+
+.contact__right {
+	padding-top: 0;
+}
+
+.contact__form {
+	width: 100%;
+}
+
+.contact__form-group {
+	margin-bottom: 32px;
+}
+
+.contact__form-label {
+	display: block;
+	font-size: 11px;
+	letter-spacing: 2px;
+	color: #999;
+	margin-bottom: 12px;
+	text-transform: uppercase;
+}
+
+.contact__form-input,
+.contact__form-textarea {
+	width: 100%;
+	padding: 16px 0;
+	font-size: 16px;
+	font-family: var(--font-primary);
+	color: #2d2d2d;
+	background-color: transparent;
+	border: none;
+	border-bottom: 1px solid #d0d0d0;
+	outline: none;
+	transition: border-color 300ms ease;
+}
+
+.contact__form-input:focus,
+.contact__form-textarea:focus {
+	border-bottom-color: #c4a574;
+}
+
+.contact__form-textarea {
+	resize: vertical;
+	min-height: 120px;
+}
+
+.contact__form-submit {
+	display: inline-block;
+	padding: 16px 48px;
+	background-color: transparent;
+	color: #2d2d2d;
+	border: 2px solid #2d2d2d;
+	font-size: 14px;
+	letter-spacing: 2px;
+	cursor: pointer;
+	position: relative;
+	overflow: hidden;
+	z-index: 1;
+	transition: color 300ms ease-in-out;
+	font-weight: 400;
+	text-transform: uppercase;
+	margin-top: 16px;
+}
+
+.contact__form-submit:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+
+.contact__form-submit::before {
+	content: "";
+	position: absolute;
+	top: 0;
+	left: -100%;
+	width: 100%;
+	height: 100%;
+	background-color: #2d2d2d;
+	transition: left 300ms ease-in-out;
+	z-index: -1;
+}
+
+.contact__form-submit:hover:not(:disabled) {
+	color: var(--color-white);
+}
+
+.contact__form-submit:hover:not(:disabled)::before {
+	left: 0;
+}
+
+.contact__form-message {
+	margin-top: 24px;
+	padding: 16px;
+	border-radius: 4px;
+	font-size: 14px;
+}
+
+.contact__form-message--success {
+	background-color: #d4edda;
+	color: #155724;
+	border: 1px solid #c3e6cb;
+}
+
+.contact__form-message--error {
+	background-color: #f8d7da;
+	color: #721c24;
+	border: 1px solid #f5c6cb;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+	.contact__container {
+		gap: 60px;
+		padding: 0 60px;
+	}
+
+	.contact__title {
+		font-size: 48px;
+	}
+}
+
+@media (max-width: 1024px) {
+	.contact__container {
+		grid-template-columns: 1fr;
+		gap: 60px;
+		padding: 0 48px;
+	}
+
+	.contact__left {
+		position: relative;
+		top: 0;
+	}
+
+	.contact__title {
+		font-size: 44px;
+	}
+}
+
+@media (max-width: 768px) {
+	.contact {
+		padding: 80px 0;
+	}
+
+	.contact__container {
+		padding: 0 32px;
+	}
+
+	.contact__title {
+		font-size: 38px;
+	}
+
+	.contact__description {
+		margin-bottom: 48px;
+	}
+
+	.contact__form-submit {
+		width: 100%;
+		text-align: center;
+	}
+}
+
+@media (max-width: 480px) {
+	.contact__container {
+		padding: 0 24px;
+	}
+
+	.contact__title {
+		font-size: 32px;
+	}
+
+	.contact__description {
+		font-size: 15px;
+	}
+
+	.contact__form-input,
+	.contact__form-textarea {
+		font-size: 15px;
+	}
+}
