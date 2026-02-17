@@ -102,21 +102,26 @@
 
 .hero__scroll-indicator {
 	position: absolute;
-	bottom: 64px;
+	bottom: 48px;
 	left: 50%;
 	transform: translateX(-50%);
 	z-index: 4;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 12px;
-	cursor: pointer;
+	gap: 8px;
+	opacity: 0.45;
+	transition: opacity 300ms ease;
+}
+
+.hero__scroll-indicator:hover {
+	opacity: 0.75;
 }
 
 .hero__scroll-text {
-	font-size: 12px;
+	font-size: 9px;
 	letter-spacing: 3px;
-	color: rgba(45, 62, 45, 0.8);
+	color: rgba(45, 62, 45, 1);
 	text-transform: uppercase;
 	font-family: var(--font-headings);
 	font-weight: 500;
@@ -124,33 +129,34 @@
 
 .hero__scroll-line {
 	width: 1px;
-	height: 40px;
-	background-color: rgba(45, 62, 45, 0.4);
+	height: 24px;
+	background: linear-gradient(to bottom, rgba(45, 62, 45, 0.6), rgba(45, 62, 45, 0));
 	position: relative;
+	overflow: hidden;
 }
 
 .hero__scroll-line::after {
 	content: "";
 	position: absolute;
-	bottom: 0;
-	left: 50%;
-	width: 6px;
-	height: 6px;
-	border-right: 2px solid rgba(45, 62, 45, 0.8);
-	border-bottom: 2px solid rgba(45, 62, 45, 0.8);
-	transform: translateX(-50%) rotate(45deg);
-	animation: arrowBounce 2s ease-in-out infinite;
+	top: -100%;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(to bottom, transparent, rgba(45, 62, 45, 0.8));
+	animation: scrollDrop 2s ease-in-out infinite;
 }
 
-@keyframes arrowBounce {
-	0%,
-	100% {
-		bottom: 0;
-		opacity: 0.5;
+@keyframes scrollDrop {
+	0% {
+		top: -100%;
+		opacity: 0;
 	}
-	50% {
-		bottom: -8px;
+	30% {
 		opacity: 1;
+	}
+	100% {
+		top: 100%;
+		opacity: 0;
 	}
 }
 
@@ -192,15 +198,7 @@
 	}
 
 	.hero__scroll-indicator {
-		bottom: 40px;
-	}
-
-	.hero__scroll-text {
-		font-size: 11px;
-	}
-
-	.hero__scroll-line {
-		height: 35px;
+		bottom: 32px;
 	}
 }
 
@@ -220,13 +218,5 @@
 
 	.hero__cta {
 		padding: 12px 32px;
-	}
-
-	.hero__scroll-indicator {
-		bottom: 32px;
-	}
-
-	.hero__scroll-line {
-		height: 30px;
 	}
 }

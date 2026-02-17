@@ -6,7 +6,7 @@ const Services = () => {
 	const [activeService, setActiveService] = useState(0);
 
 	return (
-		<section className="services" id="services">
+		<section className="services" id="diensten">
 			<div className="services__container">
 				<div className="services__left">
 					<p className="services__eyebrow">WAT WIJ DOEN</p>

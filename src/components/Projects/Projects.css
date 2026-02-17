@@ -50,6 +50,21 @@
 	cursor: pointer;
 }
 
+.project-card--reveal {
+	animation: cardReveal 500ms ease-out both;
+}
+
+@keyframes cardReveal {
+	from {
+		opacity: 0;
+		transform: translateY(16px);
+	}
+	to {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
 .project-card__image-wrapper {
 	position: relative;
 	width: 100%;

@@ -6,9 +6,9 @@ const Footer = () => {
 
 	const footerLinks = [
 		{ name: "Home", href: "#home" },
-		{ name: "Diensten", href: "#services" },
-		{ name: "Over mij", href: "#about" },
-		{ name: "Projecten", href: "#projects" },
+		{ name: "Diensten", href: "#diensten" },
+		{ name: "Over mij", href: "#over-mij" },
+		{ name: "Projecten", href: "#projecten" },
 		{ name: "Contact", href: "#contact" },
 	];
 

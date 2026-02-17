@@ -1,9 +1,17 @@
+import { useState } from "react";
 import { projectsData } from "../../data/projects";
 import "./Projects.css";
 
+const INITIAL_COUNT = 3;
+
 const Projects = () => {
+	const [showAll, setShowAll] = useState(false);
+
+	const hasMore = projectsData.length > INITIAL_COUNT;
+	const visibleProjects = showAll ? projectsData : projectsData.slice(0, INITIAL_COUNT);
+
 	return (
-		<section className="projects" id="projects">
+		<section className="projects" id="projecten">
 			<div className="projects__container">
 				<div className="projects__header">
 					<p className="projects__eyebrow">PORTFOLIO</p>
@@ -13,8 +21,8 @@ const Projects = () => {
 				</div>
 
 				<div className="projects__grid">
-					{projectsData.map((project) => (
-						<div key={project.id} className="project-card">
+					{visibleProjects.map((project, index) => (
+						<div key={project.id} className={`project-card ${index >= INITIAL_COUNT ? "project-card--reveal" : ""}`}>
 							<div className="project-card__image-wrapper">
 								<img src={project.image} alt={project.title} className="project-card__image" />
 								<div className="project-card__overlay">
@@ -28,9 +36,13 @@ const Projects = () => {
 					))}
 				</div>
 
-				<div className="projects__footer">
-					<button className="projects__cta">ZIE MEER</button>
-				</div>
+				{hasMore && !showAll && (
+					<div className="projects__footer">
+						<button className="projects__cta" onClick={() => setShowAll(true)}>
+							ZIE MEER
+						</button>
+					</div>
+				)}
 			</div>
 		</section>
 	);
